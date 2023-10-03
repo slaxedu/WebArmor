@@ -1,0 +1,1 @@
+# here we can use nuclei tempalte to find subdomain takeover or using any subdomain takeover tool like subjack.
