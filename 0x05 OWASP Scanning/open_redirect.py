@@ -1,1 +1,0 @@
-# Search on github for related script that scan for this vulnerability.

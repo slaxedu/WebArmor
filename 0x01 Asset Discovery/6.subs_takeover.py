@@ -1,2 +1,0 @@
-# here we can use nuclei tempalte to find subdomain takeover or using any subdomain takeover tool like subjack.
-# takeover tempatles: https://github.com/projectdiscovery/nuclei-templates/tree/main/http/takeovers

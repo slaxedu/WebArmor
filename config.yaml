@@ -1,1 +1,20 @@
-DOMAIN: example.com
+GLOBAL:
+  DOMAIN: hackerone.com
+
+# ASSET DISCOVERY GLOBAL VARIABLES
+ASSET_DISCOVERY:
+  UTILITIES_FOLDER_PATH: "/root/WebArmor/asset_discovery/UTILS_FOLDER"
+  OUTPUT_FOLDER_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery"
+  DOMAIN_INFO_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/domain_info.txt"
+  NUCLEI_TKO_TEMPLATE: "/root/WebArmor/asset_discovery/utils/detect-all-takeovers.yaml"
+  BRUTEFORCE_WORDLIST: "/root/WebArmor/asset_discovery/utils/wordlist.txt"
+  RESOLVERS: "/root/WebArmor/asset_discovery/utils/resolvers.txt"
+  SUBDOMAINS_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/all-unique-subdomains.txt"
+  PROBED_SUBDOMAINS_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/probed_subdomains.txt"
+  TECHNOLOGIES_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/technologies.txt"
+  SHODAN_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/shodan.txt"
+  SHODAN_API_KEY: BMQudDE2goB0mkSaS0upMrx7AbFKhQna
+  CHAOS_KEY: ODIyfiJtQVxpnoLcUeV60YXxMX7qeXJJxHdQqjtQxkBUQ0q1zAC2oEe35i3N1hTx
+
+# CRAWL GLOBAL VARIABLES
+CRAWLING_URL_ENUMERATION:

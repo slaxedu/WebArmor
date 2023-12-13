@@ -1,1 +1,0 @@
-# here we will use tool HTTPx to find the Technology stack of the subdomains.
