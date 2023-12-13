@@ -2,9 +2,9 @@ import yaml
 import shodan
 
 def perform_shodan_operations(config):
-    domain = config.get("DOMAIN")
-    shodan_api_key = config.get("SHODAN_API_KEY")
-    shodan_file_path = config.get("SHODAN_FILE_PATH")
+    domain = config["GLOBAL"]["DOMAIN"]
+    shodan_api_key = config["ASSET_DISCOVERY"]["SHODAN_API_KEY"]
+    shodan_file_path = config["ASSET_DISCOVERY"]["SHODAN_FILE_PATH"]
 
     # Ensure the required parameters are available
     if not domain or not shodan_api_key or not shodan_file_path:

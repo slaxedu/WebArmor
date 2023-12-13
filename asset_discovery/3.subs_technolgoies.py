@@ -6,8 +6,8 @@ def detect_technologies(config):
     wappalyzer = Wappalyzer.latest()
 
     results = {}
-    probed_subdomains_file_path = config.get("PROBED_SUBDOMAINS_FILE_PATH")
-    technologies_file_path = config.get("TECHNOLOGIES_FILE_PATH")
+    probed_subdomains_file_path = config["ASSET_DISCOVERY"]["PROBED_SUBDOMAINS_FILE_PATH"]
+    technologies_file_path = config["ASSET_DISCOVERY"]["TECHNOLOGIES_FILE_PATH"]
 
     if not probed_subdomains_file_path or not technologies_file_path:
         print("Error: Paths not found in the config.")

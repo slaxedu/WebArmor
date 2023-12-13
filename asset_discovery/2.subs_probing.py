@@ -43,8 +43,8 @@ def subs_probing():
     with open(config_path, "r") as config_file:
         config = yaml.safe_load(config_file)
     
-    SUBDOMAINS_FILE_PATH = config["SUBDOMAINS_FILE_PATH"]
-    OUTPUT_FOLDER_PATH = config["OUTPUT_FOLDER_PATH"]
+    SUBDOMAINS_FILE_PATH = config["ASSET_DISCOVERY"]["SUBDOMAINS_FILE_PATH"]
+    OUTPUT_FOLDER_PATH = config["ASSET_DISCOVERY"]["OUTPUT_FOLDER_PATH"]
 
     # Read subdomains from the specified file
     with open(SUBDOMAINS_FILE_PATH, 'r') as file:

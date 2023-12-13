@@ -10,11 +10,11 @@ ASSET_DISCOVERY:
   BRUTEFORCE_WORDLIST: "/root/WebArmor/asset_discovery/utils/wordlist.txt"
   RESOLVERS: "/root/WebArmor/asset_discovery/utils/resolvers.txt"
   SUBDOMAINS_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/all-unique-subdomains.txt"
-  PROBED_SUBDOMAINS_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/probed_subdomains.txt"
+  PROBED_SUBDOMAINS_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/probed_subs.txt"
   TECHNOLOGIES_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/technologies.txt"
   SHODAN_FILE_PATH: "/root/WebArmor/DATA_FOLDER/asset_discovery/shodan.txt"
-  SHODAN_API_KEY: BMQudDE2goB0mkSaS0upMrx7AbFKhQna
+  SHODAN_API_KEY: 
   CHAOS_KEY: ODIyfiJtQVxpnoLcUeV60YXxMX7qeXJJxHdQqjtQxkBUQ0q1zAC2oEe35i3N1hTx
 
 # CRAWL GLOBAL VARIABLES
-CRAWLING_URL_ENUMERATION:
+  CRAWLING_URL_ENUMERATION:
