@@ -1,0 +1,1 @@
+detect-all-takeovers:aws-bucket http high https://test.hackerone.com/
