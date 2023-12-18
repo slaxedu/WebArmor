@@ -1,1 +1,5 @@
+[FOUND] [http://testphp.vulnweb.com/redir.php?r=//example.com@google.com/%2f..] redirects to [http://google.com/]
+[FOUND] [http://testphp.vulnweb.com:80/redir.php?r=//example.com@google.com/%2f..] redirects to [http://google.com/]
+[FOUND] [http://testphp.vulnweb.com:80/redir.php?r=//google.com/%2f..] redirects to [http://google.com/]
+[FOUND] [http://testphp.vulnweb.com/redir.php?r=//google.com/%2f..] redirects to [http://google.com/]
 
