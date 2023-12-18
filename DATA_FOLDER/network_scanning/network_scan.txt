@@ -1,1 +1,37 @@
+IP: 192.168.1.1
+State: up
+Open Ports: 23, 53, 80, 443
+Services: telnet, domain, http, https
+Versions: , , , 
+
+IP: 192.168.1.8
+State: down
+Open Ports: 
+Services: 
+Versions: 
+
+IP: 192.168.1.2
+State: down
+Open Ports: 
+Services: 
+Versions: 
+
+IP: 192.168.1.5
+State: up
+Open Ports:  
+Services: 
+Versions: 
+
+IP: 192.168.1.9
+State: down
+Open Ports: 
+Services: 
+Versions: 
+
+IP: 192.168.1.4
+State: down
+Open Ports: 
+Services: 
+Versions: 
+
 
