@@ -9,11 +9,18 @@ def xss_scan(urls_file):
      	for i in xss_urls:
      		f.write(i)
     try:
-       		command = f"dalfox file '{xss_urls_path}' -o 'root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt' --waf-evasion --deep-domxss --mining-dict --mining-dom"
-       		process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-       		process.wait()
-    except Exception as e:
-        		print(f"Error executing command '{command}': {e}")
+       						with open (xss_urls_path,'r') as o:
+       							vuln_urls=[i for i in o.readlines()]
+    except FileNotFoundError:
+       					print("No xss urls file was found ! ")
+       					sys.exit()
+    for xurl in vuln_urls:
+       try:
+       				command = f"dalfox url '{xurl}' -o 'root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt' --waf-evasion --deep-domxss --mining-dict --mining-dom"
+       				process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+       				process.wait()
+       except Exception as e:
+       	print(f"Error executing command '{command}': {e}")
      	
 if __name__ == "__main__":
        if len(sys.argv) != 2:
