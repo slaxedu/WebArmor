@@ -19,3 +19,9 @@ ASSET_DISCOVERY:
 # CRAWL GLOBAL VARIABLES
 CRAWLING_URL_ENUMERATION:
   OUTPUT_FOLDER_PATH: "/root/WebArmor/DATA_FOLDER/crawling_url_enumeration"
+
+# OWASP GLOBAL VARIABLES 
+OWASP:
+  OP_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/open_redirect.txt"
+  XSS_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt"
+  SQLI_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/"
