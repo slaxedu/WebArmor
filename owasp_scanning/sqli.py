@@ -1,6 +1,6 @@
 import subprocess
 import sys
-
+import yaml
 def sqli_scan(urls_file_path):
     print("\n[~] Scanning for SQL injection . . .")
     
@@ -19,10 +19,13 @@ def sqli_scan(urls_file_path):
     	print("Urls File doesn't exist")
     	sys.exit()	
     try:
-        command = f"sqlmap -m '{clean_urlsfile_path}' --dbs -f --batch --output-dir='root/WebArmor/DATA_FOLDER/owasp_scanning/' --results-file='/dev/null'"
+        with open('/root/WebArmor/config.yaml', 'r') as config_file:
+            config = yaml.safe_load(config_file)
+        output_folder=config["OWASP"]["SQLI_OUTPUT_PATH"]
+        command = f"sqlmap -m '{clean_urlsfile_path}' --dbs -f --batch --output-dir='{output_folder}' --results-file='/dev/null'"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
-        print("Output saved to: root/WebArmor/DATA_FOLDER/owasp_scanning/")
+        print("Output folder : root/WebArmor/DATA_FOLDER/owasp_scanning/")
     except Exception as e:
         print(f"Error while starting sqlmap: {e}")
 
@@ -31,4 +34,3 @@ if __name__ == "__main__":
         sys.exit(1)
 
     sqli_scan(sys.argv[1])
-  
