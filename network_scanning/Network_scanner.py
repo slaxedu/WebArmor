@@ -1,9 +1,15 @@
 import nmap
+import yaml
 
-def scan(ip_file_path):
+def scan():
     print("[-] Scanning target's network . . .")
     nm = nmap.PortScanner()
     output_content = ""
+    
+    with open('/root/WebArmor/config.yaml', 'r') as config_file:
+        config = yaml.safe_load(config_file)
+
+    ip_file_path = config['ASSET_DISCOVERY']['SHODAN_FILE_PATH']
 
     try:
         with open(ip_file_path, 'r') as file:
@@ -64,9 +70,10 @@ def scan(ip_file_path):
             output_content += "Services: \n"
             output_content += "Versions: \n"
 
-        output_content += "\n" 
+        output_content += "\n"
 
-    with open('root/WebArmor/DATA_FOLDER/network_scanning/network_scan.txt', 'w') as file:
+    output_path = config['NETWORK_SCAN']['SCAN_RESULT_PATH']
+    with open(output_path, 'w') as file:
         file.write(output_content)
 
-    print(f"Network Scan result was saved to root/WebArmor/DATA_FOLDER/network_scanning/network_scan.txt")
+    print(f"Network Scan result was saved to : {output_path}")
