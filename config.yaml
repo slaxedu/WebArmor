@@ -32,3 +32,10 @@ OWASP:
 NETWORK_SCAN:
   SCAN_RESULT_PATH: "root/WebArmor/DATA_FOLDER/network_scanning/network_scan.txt"
 
+
+
+#REPORT GLOBAL VARIABLES
+REPORT:
+  REPORT_PATH: "/root/WebArmor/Report.html"
+  
+
