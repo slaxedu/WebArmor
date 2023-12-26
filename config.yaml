@@ -24,7 +24,7 @@ CRAWLING_URL_ENUMERATION:
 OWASP:
   OP_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/open_redirect.txt"
   XSS_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt"
-  SQLI_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/"
+  SQLI_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/sqli_output/"
 
 
 
