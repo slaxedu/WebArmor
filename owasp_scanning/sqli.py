@@ -27,7 +27,7 @@ def sqli_scan(urls_file_path):
         command = f"sqlmap -m '{clean_urlsfile_path}' --dbs -f --batch --output-dir='{output_folder}' --results-file='/dev/null'"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
-        print("Output folder: root/WebArmor/DATA_FOLDER/owasp_scanning/")
+        print("Output folder: root/WebArmor/DATA_FOLDER/owasp_scanning/sqli_output/")
     except Exception as e:
         print(f"Error while starting sqlmap: {e}")
 
