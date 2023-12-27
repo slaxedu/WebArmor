@@ -26,6 +26,7 @@ OWASP:
   XSS_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt"
   SQLI_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/sqli_output/"
   XXE_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xxe.txt"
+  XXE_TEMPS_PATH: "root/WebArmor/owasp_scanning/utils/xxe-templates/"
 
 
 
