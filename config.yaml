@@ -41,6 +41,8 @@ REPORT:
   MAIN_PAGE_PATH: "/root/WebArmor/Report.html"
   OWASP_PAGE_PATH: "/root/WebArmor/reporting/utils/owasp.html"
   NETWORK_PAGE_PATH: "/root/WebArmor/reporting/utils/network.html"
+  VULNSCAN_PAGE_PATH: "/root/WebArmor/reporting/utils/vulnscan.html"
+  
   
   
 
