@@ -42,7 +42,12 @@ REPORT:
   OWASP_PAGE_PATH: "/root/WebArmor/reporting/utils/owasp.html"
   NETWORK_PAGE_PATH: "/root/WebArmor/reporting/utils/network.html"
   VULNSCAN_PAGE_PATH: "/root/WebArmor/reporting/utils/vulnscan.html"
-  
+  URLS_PAGE_PATH: "/root/WebArmor/reporting/utils/urls.html"
+  INFO_TEMP_PATH: "root/WebArmor/reporting/utils/info_temp.txt"
+  NETWORK_TEMP_PATH: "root/WebArmor/reporting/utils/network_temp.txt"
+  OWASP_TEMP_PATH: "root/WebArmor/reporting/utils/owasp_temp.txt"
+  URLS_TEMP_PATH: "root/WebArmor/reporting/utils/urls_temp.txt"
+  VULNSCAN_TEMP_PATH: "root/WebArmor/reporting/utils/vulnscan_temp.txt"
   
   
 
