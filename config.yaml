@@ -22,32 +22,32 @@ CRAWLING_URL_ENUMERATION:
 
 # OWASP GLOBAL VARIABLES 
 OWASP:
-  OP_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/open_redirect.txt"
-  XSS_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt"
-  SQLI_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/sqli_output/"
-  XXE_OUTPUT_PATH: "root/WebArmor/DATA_FOLDER/owasp_scanning/xxe.txt"
-  XXE_TEMPS_PATH: "root/WebArmor/owasp_scanning/utils/xxe-templates/"
+  OP_OUTPUT_PATH: "/root/WebArmor/DATA_FOLDER/owasp_scanning/open_redirect.txt"
+  XSS_OUTPUT_PATH: "/root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt"
+  SQLI_OUTPUT_PATH: "/root/WebArmor/DATA_FOLDER/owasp_scanning/sqli_output/"
+  XXE_OUTPUT_PATH: "/root/WebArmor/DATA_FOLDER/owasp_scanning/xxe.txt"
+  XXE_TEMPS_PATH: "/root/WebArmor/owasp_scanning/utils/xxe-templates/"
 
 
 
 #NETWORK GLOBAL VARIABLES
 NETWORK_SCAN:
-  SCAN_RESULT_PATH: "root/WebArmor/DATA_FOLDER/network_scanning/network_scan.txt"
+  SCAN_RESULT_PATH: "/root/WebArmor/DATA_FOLDER/network_scanning/network_scan.txt"
 
 
 
 #REPORT GLOBAL VARIABLES
 REPORT:
   MAIN_PAGE_PATH: "/root/WebArmor/Report.html"
-  OWASP_PAGE_PATH: "/root/WebArmor/reporting/utils/owasp.html"
-  NETWORK_PAGE_PATH: "/root/WebArmor/reporting/utils/network.html"
-  VULNSCAN_PAGE_PATH: "/root/WebArmor/reporting/utils/vulnscan.html"
-  URLS_PAGE_PATH: "/root/WebArmor/reporting/utils/urls.html"
-  INFO_TEMP_PATH: "root/WebArmor/reporting/utils/info_temp.txt"
-  NETWORK_TEMP_PATH: "root/WebArmor/reporting/utils/network_temp.txt"
-  OWASP_TEMP_PATH: "root/WebArmor/reporting/utils/owasp_temp.txt"
-  URLS_TEMP_PATH: "root/WebArmor/reporting/utils/urls_temp.txt"
-  VULNSCAN_TEMP_PATH: "root/WebArmor/reporting/utils/vulnscan_temp.txt"
+  OWASP_PAGE_PATH: "/root/WebArmor/DATA_FOLDER/reporting/owasp.html"
+  NETWORK_PAGE_PATH: "/root/WebArmor/DATA_FOLDER/reporting/network.html"
+  VULNSCAN_PAGE_PATH: "/root/WebArmor/DATA_FOLDER/reporting/vulnscan.html"
+  URLS_PAGE_PATH: "/root/WebArmor/DATA_FOLDER/reporting/urls.html"
+  INFO_TEMP_PATH: "/root/WebArmor/reporting/utils/info_temp.txt"
+  NETWORK_TEMP_PATH: "/root/WebArmor/reporting/utils/network_temp.txt"
+  OWASP_TEMP_PATH: "/root/WebArmor/reporting/utils/owasp_temp.txt"
+  URLS_TEMP_PATH: "/root/WebArmor/reporting/utils/urls_temp.txt"
+  VULNSCAN_TEMP_PATH: "/root/WebArmor/reporting/utils/vulnscan_temp.txt"
   
   
 
