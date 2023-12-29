@@ -62,7 +62,7 @@ def xss_reporter():
         html_template += """
                 <h2><b>No Xss Vulns were found</b></h2>
                 """
-        break
+        
 
     html_template += """
     <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
