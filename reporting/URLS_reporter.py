@@ -23,7 +23,7 @@ def generate_html_report():
     }
 
     files = {
-        urls_file_path: {
+        urls_file_path.split('/')[-1]: {
             'content': text
         }
     }
