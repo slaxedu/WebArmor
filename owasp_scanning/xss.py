@@ -27,13 +27,13 @@ def xss_scan():
         for xurl in clean_urls[:3]:
             try:
                 out = config['OWASP']["XSS_OUTPUT_PATH"]
-                command = f"dalfox url '{xurl}' -o '{out}'"
+                command = f"dalfox url '{xurl}' --only-poc='r,v' -o '{out}'"
                 
                 process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 process.wait()
             except Exception as e:
                 print(f"Error executing command '{command}': {e}")
-        print(f"Output saved to:{out}")
+        print(f"Output saved to: {out}")
 
     except Exception as e:
         print(f"An error occurred: {e}")
