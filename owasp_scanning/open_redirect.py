@@ -37,7 +37,7 @@ def open_redirect_scan():
         sys.exit()	
 
     try:
-        output_file = config['OWASP']["XSS_OUTPUT_PATH"]
+        output_file = config['OWASP']["OP_OUTPUT_PATH"]
         command = f"python root/WebArmor/owasp_scanning/utils/opxV3.py -f {clean_urlsfile_path} -o {output_file}"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
