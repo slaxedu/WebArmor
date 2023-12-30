@@ -33,6 +33,7 @@ def xss_scan():
                 process.wait()
             except Exception as e:
                 print(f"Error executing command '{command}': {e}")
+        print(f"Output saved to:{out}")
 
     except Exception as e:
         print(f"An error occurred: {e}")
