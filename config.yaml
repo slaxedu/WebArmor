@@ -20,6 +20,15 @@ ASSET_DISCOVERY:
 CRAWLING_URL_ENUMERATION:
   OUTPUT_FOLDER_PATH: "/root/WebArmor/DATA_FOLDER/crawling_url_enumeration"
 
+# VULNERABILITY_SCAN GLOBAL VARIABLES
+VULNERABILITY_SCANNING:
+  NUCLEI_OUTPUT_FOLDER_PATH: "/root/WebArmor/DATA_FOLDER/vulnerability_scanning/nuclei_result.txt"
+  TEMPLATES_PATH: "/root/WebArmor/vulnerability_scanning/utils/templates/"
+
+
+
+
+
 # OWASP GLOBAL VARIABLES 
 OWASP:
   OP_OUTPUT_PATH: "/root/WebArmor/DATA_FOLDER/owasp_scanning/open_redirect.txt"
