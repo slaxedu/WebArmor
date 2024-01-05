@@ -15,7 +15,7 @@ def generate_html_report():
     with open(vulnscan_html_temp_path) as f:
         html_template = f.read()
 
-    html_template += """
+    html_template += f"""
 <body>
   <div id="main">
     <div id="header">
