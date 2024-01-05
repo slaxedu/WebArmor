@@ -17,7 +17,7 @@ def xss_scan():
         uniq_params.update({i[:i.index('=') + 1]: i[i.index('=') + 1:]})
     clean_urls = [key + value for key, value in uniq_params.items()]
     
-    clean_urls_path = '/root/WebArmor/owasp_scanning/utils/cleanXss.txt'
+    clean_urls_path = '/root/WebArmor/owasp_scanning/utils/xss_urls.txt'
     
     with open(clean_urls_path, 'w') as f:
         for i in clean_urls:
