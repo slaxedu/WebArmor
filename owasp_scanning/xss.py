@@ -24,7 +24,7 @@ def scan():
             f.write(i+'\n')
 
     try:
-        for xurl in clean_urls[:3]:
+        for xurl in clean_urls:
             try:
                 out = config['OWASP']["XSS_OUTPUT_PATH"]
                 command = f"dalfox url '{xurl}' --only-poc='r,v' -o '{out}'"
@@ -45,4 +45,4 @@ if __name__ == "__main__":
     
     input_file = sys.argv[1]
     scan()
-    print("Output saved to: root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt")
+    print(f"Output saved to: {out}")
