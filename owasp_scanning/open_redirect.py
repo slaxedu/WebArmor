@@ -2,7 +2,7 @@ import subprocess
 import sys
 import yaml
 
-def open_redirect_scan():
+def scan():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
 
