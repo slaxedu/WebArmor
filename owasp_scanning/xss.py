@@ -2,7 +2,7 @@ import subprocess
 import yaml
 import sys
 
-def xss_scan():
+def scan():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
 
@@ -44,5 +44,5 @@ if __name__ == "__main__":
         sys.exit(1)
     
     input_file = sys.argv[1]
-    xss_scan()
+    scan()
     print("Output saved to: root/WebArmor/DATA_FOLDER/owasp_scanning/xss.txt")
