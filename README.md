@@ -9,12 +9,12 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/slaxedu/WebArmor">
   <img alt="License" src="https://img.shields.io/github/license/slaxedu/WebArmor">
 
- <img alt="Release Version" src="https://img.shields.io/github/v/release/slaxedu/WebArmor">
   <img alt="Last Commit" src="https://img.shields.io/github/last-commit/slaxedu/WebArmor">
   <img alt="Issues" src="https://img.shields.io/github/issues/slaxedu/WebArmor">
   <img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/slaxedu/WebArmor">
   <img alt="Contributors" src="https://img.shields.io/github/contributors/slaxedu/WebArmor">
-  <img alt="Downloads" src="https://img.shields.io/github/downloads/slaxedu/WebArmor/total">
+  <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/slaxedu/WebArmor">
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/slaxedu/WebArmor">  
 
 </p>
 
