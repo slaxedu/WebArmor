@@ -41,7 +41,7 @@ def scan():
         command = f"python root/WebArmor/owasp_scanning/utils/opxV3.py -f {clean_urlsfile_path} -o {output_file}"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
-        print(f"Output file: {output_file}")
+        print(f"Output saved to : {output_file}")
         
     except Exception as e:
         print(f"Error executing command '{command}': {e}")
