@@ -1,6 +1,8 @@
 from Wappalyzer import Wappalyzer, WebPage
 import yaml
 from halo import Halo
+from requests.exceptions import SSLError
+import sys
 
 def detect_technologies(config):
     wappalyzer = Wappalyzer.latest()
@@ -25,10 +27,13 @@ def detect_technologies(config):
                         technologies = wappalyzer.analyze(webpage)
                         results[subdomain] = technologies
                         output.write(f"{subdomain} => {technologies}\n")
+                    except SSLError as ssl_error:
+                        # Suppress SSL errors
+                        pass
                     except Exception as e:
-                        print(f"Error analyzing {subdomain}: {e}")
+                        print(f"Error analyzing {subdomain}: {e}", file=sys.stderr)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error: {e}", file=sys.stderr)
 
     return results
 

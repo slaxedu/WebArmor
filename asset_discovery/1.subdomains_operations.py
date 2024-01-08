@@ -2,7 +2,7 @@ import os
 import requests
 import subprocess
 import yaml
-import re  # Import the 're' module
+import re  
 from halo import Halo
 
 def download_file(url, folder_path, filename):
@@ -61,7 +61,6 @@ def subdomains_operations(config_path):
     CHAOS_KEY = config["ASSET_DISCOVERY"]["CHAOS_KEY"]
     NUCLEI_TKO_TEMPLATE = config["ASSET_DISCOVERY"]["NUCLEI_TKO_TEMPLATE"]
     WORDLIST = config["ASSET_DISCOVERY"]["BRUTEFORCE_WORDLIST"]
-    RESOLVERS = config["ASSET_DISCOVERY"]["RESOLVERS"]
     
     # Enumerate subdomains
     print("PASSIVE SUBDOMAINS ENUMERATION")

@@ -1,3 +1,4 @@
+import os
 import yaml
 import socket
 import subprocess
@@ -10,6 +11,8 @@ def load_configuration(config_path):
     except Exception as e:
         print(f"Error loading configuration: {e}")
         return None
+
+
 
 def retrieve_domain_info(domain, output_file):
     try:
