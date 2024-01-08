@@ -137,7 +137,10 @@ def sqli_reporter():
                 with open(file_path2, 'r') as file:
                     log_file_cont = file.readlines()
 
-                log_details = [i.strip().split(':') for i in log_file_cont if len(i.strip().split(':')) == 2][1:]
+                dbs=[i.strip() for i in log_file_cont][:-1]
+                databases=[[dbs[-3][:-1],dbs[-2]+' '+dbs[-1]]]
+
+                log_details = [i.strip().split(':') for i in log_file_cont if len(i.strip().split(':')) == 2][1:-1]+databases
                 log_title = log_file_cont[0]
                 target = target_file_cont.split(' ')[0]
 
