@@ -7,7 +7,7 @@ def scan():
         config = yaml.safe_load(config_file)
 
     urls_file_path = config['CRAWLING_URL_ENUMERATION']['OUTPUT_FOLDER_PATH']
-    print("\n[~] Scanning for Open_Redirect vulnerability . . .")
+    print("\n[~] Scanning urls for Open_Redirect . . .")
     params = ['?next', '?url', '?target', '?rurl', '?dest', '?destination', '?redir', '?redirect_uri', '?redirect_url', '?redirect', '/redirect', '/cgi-bin/redirect.cgi', '/out', '/out', '?view', '/login?to', '?image_url', '?go', '?return', '?returnTo', '?return_to', '?checkout_url', '?continue', '?return_path', 'success', 'data', 'qurl', 'login', 'logout', 'ext', 'clickurl', 'goto', 'rit_url', 'forward_url', 'forward', 'pic', 'callback_url', 'jump', 'jump_url', 'click?u', 'originUrl', 'origin', 'Url', 'desturl', 'u', 'page', 'u1', 'action', 'action_url', 'Redirect', 'sp_url', 'service', 'recurl', 'j?url', 'url', 'uri', 'r', 'allinurl', 'q', 'link', 'src', 'tc?src', 'linkAddress', 'location', 'burl', 'request', 'backurl', 'RedirectUrl', 'Redirect', 'ReturnUrl']
     
     try:
