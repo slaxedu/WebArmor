@@ -2,7 +2,7 @@ import subprocess
 import yaml
 
 def scan():
-    print("\n[~] scanning target for xxe & ssrf . . .")
+    print("\n[~] scanning urls for xxe & ssrf . . .")
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
     output_file_path = config["OWASP"]["XXE_SSRF_OUTPUT_PATH"]
