@@ -10,11 +10,9 @@
   <img alt="License" src="https://img.shields.io/github/license/slaxedu/WebArmor">
 
   <img alt="Last Commit" src="https://img.shields.io/github/last-commit/slaxedu/WebArmor">
-  <img alt="Issues" src="https://img.shields.io/github/issues/slaxedu/WebArmor">
-  <img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/slaxedu/WebArmor">
   <img alt="Contributors" src="https://img.shields.io/github/contributors/slaxedu/WebArmor">
   <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/slaxedu/WebArmor">
-  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/slaxedu/WebArmor">  
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/slaxedu/WebArmor">
 
 </p>
 
@@ -57,10 +55,13 @@ python main.py
 For additional options and configurations, refer to the documentation.
 
 ## Contributing
+
 We welcome contributions! Please check out our contribution guidelines for details.
 
 ## License
+
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ## Acknowledgments
+
 Special thanks to all our contributors who made this project possible.
