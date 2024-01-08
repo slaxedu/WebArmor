@@ -20,7 +20,7 @@ def scan():
         command = f"nuclei -l {clean_urls_path} -t {templates_path} -o {output_file_path}"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
-        print(f"output saved to : {output_file_path}")
+        print(f"Output saved to : {output_file_path}")
     except Exception as e:
         print(f"Error executing command '{command}': {e}")
       
