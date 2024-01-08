@@ -3,7 +3,7 @@ import sys
 import yaml
 
 def scan():
-    print("\n[~] Scanning for SQL injection . . .")
+    print("\n[~] Scanning urls for SQL injection . . .")
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
     output_folder = config["OWASP"]["SQLI_OUTPUT_PATH"]
