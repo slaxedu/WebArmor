@@ -52,7 +52,7 @@ def run_command(command, text=""):
 
 def subdomains_operations():
     # Load configuration from config.yaml
-    config_path = "/sdcard/root/WebArmor/config.yaml"
+    config_path = "/root/WebArmor/config.yaml"
     with open(config_path, "r") as config_file:
         config = yaml.safe_load(config_file)
 
@@ -96,7 +96,6 @@ def subdomains_operations():
 
 if __name__ == "__main__":
     # Configurability: Allow specifying config file path as a command-line argument
-    config_path = "/root/WebArmor/config.yaml"
 
     # Call the function
     subdomains_operations()
