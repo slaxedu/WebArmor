@@ -1,6 +1,6 @@
 import yaml
 import shodan
-
+import socket
 def perform_shodan_operations(config):
     global domain
     domain = config["GLOBAL"]["DOMAIN"]
