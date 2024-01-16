@@ -2,8 +2,10 @@ import yaml
 import shodan
 
 def perform_shodan_operations(config):
+    global domain
     domain = config["GLOBAL"]["DOMAIN"]
     shodan_api_key = config["ASSET_DISCOVERY"]["SHODAN_API_KEY"]
+    global shodan_file_path
     shodan_file_path = config["ASSET_DISCOVERY"]["SHODAN_FILE_PATH"]
 
     # Ensure the required parameters are available
@@ -28,7 +30,15 @@ def perform_shodan_operations(config):
             output.write(f"{ipv4_address}\n")
 
     print(f"Done with Shodan operations.")
-
+def get_ip_address(domain_name):
+    try:
+        ip_address = socket.gethostbyname(domain_name)
+        global shodan_file_path
+        with open(shodan_file_path, 'w') as output:
+        	output.write(ip_address+'\n')
+    except socket.error as e:
+        print(f"Error retrieving IP address for {domain_name}: {e}")
+        return None
 def shodan_operations():
     # Config file path
     config_path = "/root/WebArmor/config.yaml"
@@ -39,6 +49,7 @@ def shodan_operations():
 
     # Run the function
     perform_shodan_operations(config)
+    get_ip_address(domain)
 
 # Call the main function if the script is executed directly
 if __name__ == "__main__":
