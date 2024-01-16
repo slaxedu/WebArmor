@@ -77,7 +77,7 @@ def subdomains_operations():
 
 
     # Active Subdomains Enumeration using PureDNS
-    print("ACTIVE SUBDOMAINS ENUMERATION")
+    print("\nACTIVE SUBDOMAINS ENUMERATION")
 
     # Active Subdomains Enumeration using Gobuster
     print("🔍 Enumerating subdomains using Gobuster (Bruteforce)...")
