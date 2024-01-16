@@ -4,7 +4,8 @@ import socket
 import subprocess
 from halo import Halo
 
-def load_configuration(config_path):
+def load_configuration():
+    config_path = "/root/WebArmor/config.yaml"
     try:
         with open(config_path, "r") as config_file:
             return yaml.safe_load(config_file)
@@ -33,12 +34,12 @@ def retrieve_domain_info(domain, output_file):
     except Exception as e:
         print(f"Error retrieving domain information: {e}")
 
-def domain_operations(config_path):
+def domain_operations():
     spinner = Halo(text="Loading configuration...", spinner="dots")
     spinner.start()
 
     # Load configuration
-    config = load_configuration(config_path)
+    config = load_configuration()
     spinner.stop()
 
     if config:
@@ -54,8 +55,6 @@ def domain_operations(config_path):
             print("Error: Domain or domain info file path not found in the config file.")
 
 if __name__ == "__main__":
-    # Configurability: Allow specifying config file path as a command-line argument
-    config_path = "/root/WebArmor/config.yaml"
 
     # Call the main function with the desired config file path
-    domain_operations(config_path)
+    domain_operations()
