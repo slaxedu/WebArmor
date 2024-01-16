@@ -30,7 +30,7 @@ def retrieve_domain_info(domain, output_file):
         with open(output_file, 'w') as file:
             file.write(output)
 
-        print("Done with Domain Information.")
+        print("\nDone with Domain Information.\n")
     except Exception as e:
         print(f"Error retrieving domain information: {e}")
 
