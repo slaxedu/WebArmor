@@ -54,7 +54,7 @@ def subs_probing():
     output_file = os.path.join(OUTPUT_FOLDER_PATH, "probed_subs.txt")
     probed_subs = probe_subdomains(subdomains, output_file)
 
-    print(f"✅ Subdomain probing done.")
+    print(f"✅ Subdomain probing done.\n")
 
 # Call the main function if the script is executed directly
 if __name__ == "__main__":
