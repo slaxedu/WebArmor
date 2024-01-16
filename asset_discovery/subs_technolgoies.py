@@ -49,7 +49,7 @@ def subs_technologies():
     subdomains_with_technologies = detect_technologies(config)
 
     # Print a message indicating the completion of the script
-    print("Done with detecting technologies.")
+    print("Done with detecting technologies.\n")
 
 # Call the main function if the script is executed directly
 if __name__ == "__main__":
