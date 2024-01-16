@@ -50,8 +50,9 @@ def run_command(command, text=""):
     spinner.stop()
     return output
 
-def subdomains_operations(config_path):
+def subdomains_operations():
     # Load configuration from config.yaml
+    config_path = "/sdcard/root/WebArmor/config.yaml"
     with open(config_path, "r") as config_file:
         config = yaml.safe_load(config_file)
 
@@ -98,4 +99,4 @@ if __name__ == "__main__":
     config_path = "/root/WebArmor/config.yaml"
 
     # Call the function
-    subdomains_operations(config_path)
+    subdomains_operations()
