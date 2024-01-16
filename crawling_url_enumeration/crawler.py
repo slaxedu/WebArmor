@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import yaml
+from halo import Halo
 
 def crawl(domain):
     headers = {
@@ -27,23 +28,24 @@ def crawl(domain):
                 urls.append(absolute_url)
 
         return urls
-    except requests.exceptions.RequestException as e:
-        print(f"Error making the request for {url}: {e}")
+    except requests.exceptions.RequestException:
         return []
-        
-        
+
+
 def crawl_urls():
-	print("[~] crawling urls . . .")
-	all_urls=[]
-	with open('/root/WebArmor/config.yaml', 'r') as config_file:
-		config = yaml.safe_load(config_file)
-	output_folder = config['CRAWLING_URL_ENUMERATION']['OUTPUT_FOLDER_PATH']
-	domains_path=config['ASSET_DISCOVERY']['SUBDOMAINS_FILE_PATH']
-	with open(domains_path, 'r') as f:
-	       domains = [i.strip() for i in f.readlines()]
-	for i in domains:
-	 all_urls.extend(crawl(i))
-	with open(output_folder,'a') as f:
-	 for url in all_urls:
-	 	f.write(url+'\n')
-	print(f"all crawled urls were saved to : {output_folder}") 
+    all_urls = []
+    with open('/root/WebArmor/config.yaml', 'r') as config_file:
+        config = yaml.safe_load(config_file)
+    output_folder = config['CRAWLING_URL_ENUMERATION']['OUTPUT_FOLDER_PATH']
+    domains_path = config['ASSET_DISCOVERY']['SUBDOMAINS_FILE_PATH']
+    with open(domains_path, 'r') as f:
+        domains = [i.strip() for i in f.readlines()]
+    spinner = Halo(text="Crawling URLs . . .", spinner="dots")
+    spinner.start()
+    for i in domains:
+        all_urls.extend(crawl(i))
+    with open(output_folder, 'a') as f:
+        for url in all_urls:
+            f.write(url + '\n')
+    print(f"\nAll crawled URLs were saved to: {output_folder}\n")
+    spinner.stop()
