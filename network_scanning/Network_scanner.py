@@ -1,11 +1,11 @@
 import nmap
 import yaml
 
-def scan():
-    print("[-] Scanning target's network . . .")
+def launch_scan():
+    print("🔎 Scanning target's network . . .")
     nm = nmap.PortScanner()
     output_content = ""
-    
+
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
 
@@ -76,4 +76,4 @@ def scan():
     with open(output_path, 'w') as file:
         file.write(output_content)
 
-    print(f"Network Scan result was saved to : {output_path}")
+    print(f"Network Scan result was saved to : {output_path}\n")
