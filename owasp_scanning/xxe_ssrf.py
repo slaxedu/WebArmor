@@ -11,7 +11,7 @@ def scan():
 
     try:
         with open(urls_file_path, 'r') as f:
-            urls = list(set([i.strip() for i in f.readlines()]))
+            urls = list({i.strip() for i in f.readlines()})
         clean_urls_path = '/root/WebArmor/owasp_scanning/utils/xxe-ssrf-clean-urls.txt'
         with open(clean_urls_path, 'w') as file:
             for i in urls:
