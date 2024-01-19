@@ -10,7 +10,7 @@ def scan():
     urls_file_path = config['CRAWLING_URL_ENUMERATION']['OUTPUT_FOLDER_PATH']
 
     with open(urls_file_path, 'r') as f:
-        urls = list(set([i.strip() for i in f.readlines() if "=" in i and "redir=" not in i and "r=" not in i]))
+        urls = list({i.strip() for i in f.readlines() if "=" in i and "redir=" not in i and "r=" not in i})
 
     uniq_params = dict()
     for i in urls:
