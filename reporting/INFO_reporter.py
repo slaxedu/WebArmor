@@ -1,3 +1,4 @@
+import ast
 from datetime import datetime
 import yaml
 
@@ -103,7 +104,7 @@ def generate_html_report():
             return '<i>no-info</i>'
 
         formatted_info = ''
-        info_dict = eval(info)
+        info_dict = ast.literal_eval(info)
         for key, values in info_dict.items():
             formatted_info += f'<b>{key}</b> : {", ".join(values)}<br>'
 
