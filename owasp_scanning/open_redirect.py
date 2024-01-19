@@ -25,7 +25,7 @@ def scan():
                 print("[!] No Urls that may be vulnerable for open redirect were found")
                 sys.exit()
 
-            clean_urlsfile_path = '/sdcard/root/WebArmor/owasp_scanning/utils/open_redir_urls.txt'
+            clean_urlsfile_path = '/root/WebArmor/owasp_scanning/utils/open_redir_urls.txt'
 
             with open(clean_urlsfile_path, 'w') as f:
                 for i in clean_urls:
@@ -39,7 +39,7 @@ def scan():
         spinner = Halo(text="Scanning urls for Open_Redirect . . .", spinner="dots")
         spinner.start()
         output_file = config['OWASP']["OP_OUTPUT_PATH"]
-        command = f"python /sdcard/root/WebArmor/owasp_scanning/utils/opxV3.py -f {clean_urlsfile_path} -o {output_file}"
+        command = f"python /root/WebArmor/owasp_scanning/utils/opxV3.py -f {clean_urlsfile_path} -o {output_file}"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
         print(f"\nOutput saved to : {output_file}\n")
