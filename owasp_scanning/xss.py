@@ -16,7 +16,7 @@ def scan():
         uniq_params.update({i[:i.index('=') + 1]: i[i.index('=') + 1:]})
     clean_urls = [key + value for key, value in uniq_params.items()]
 
-    clean_urls_path = '/sdcard/root/WebArmor/owasp_scanning/utils/cleanXss.txt'
+    clean_urls_path = '/root/WebArmor/owasp_scanning/utils/cleanXss.txt'
 
     with open(clean_urls_path, 'w') as f:
         for i in clean_urls:
@@ -28,7 +28,7 @@ def scan():
         for xurl in clean_urls[:2]:
             try:
                 out = config['OWASP']["XSS_OUTPUT_PATH"]
-                command = f"~/go/bin/./dalfox url '{xurl}' --only-poc='r,v'  -o '{out}'"
+                command = f"dalfox url '{xurl}' --only-poc='r,v'  -o '{out}'"
 
                 process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 process.wait()
