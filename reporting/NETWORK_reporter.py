@@ -1,6 +1,6 @@
 import yaml
 
-def generate_report():
+def generate_html_report():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
 
