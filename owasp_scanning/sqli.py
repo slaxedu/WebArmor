@@ -12,7 +12,7 @@ def scan():
     try:
         with open(urls_file_path, 'r') as f:
             urls = list(set([i.strip() for i in f.readlines() if "=http" not in i and "=" in i]))
-        uniq_params = dict()
+        uniq_params = {}
         for i in urls:
             uniq_params.update({i[:i.index('=')+1]: i[i.index('=')+1:]})
         clean_urls = [key + value for key, value in uniq_params.items()]
