@@ -1,6 +1,5 @@
 import subprocess
 import yaml
-import sys
 from halo import Halo
 
 def scan():
@@ -12,7 +11,7 @@ def scan():
     with open(urls_file_path, 'r') as f:
         urls = list({i.strip() for i in f.readlines() if "=" in i and "redir=" not in i and "r=" not in i})
 
-    uniq_params = dict()
+    uniq_params = {}
     for i in urls:
         uniq_params.update({i[:i.index('=') + 1]: i[i.index('=') + 1:]})
     clean_urls = [key + value for key, value in uniq_params.items()]

@@ -4,7 +4,6 @@ import yaml
 from halo import Halo
 
 def archived_urls_collector(domain):
-    global target
     if target not in domain:
         return []
     try:
