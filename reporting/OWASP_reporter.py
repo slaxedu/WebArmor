@@ -14,11 +14,7 @@ with open('/root/WebArmor/config.yaml', 'r') as config_file:
     vulnscan_html_report_path = config['REPORT']['VULNSCAN_PAGE_PATH']
     urls_html_report_path = config['REPORT']['URLS_PAGE_PATH']
 
-
 def xss_reporter():
-    with open(xss_file_path, 'r') as input_file:
-        content = [line.split() for line in input_file.readlines()]
-
     global html_template
     with open(owasp_html_temp_path, 'r') as f:
         html_template = f.read()
@@ -50,6 +46,18 @@ def xss_reporter():
           <div id="content">
             <h1><b>XSS Report/POCS</b></h1>
     """
+    try:
+        with open(xss_file_path, 'r') as input_file:
+            content = [line.split() for line in input_file.readlines()]
+    except (FileExistsError, FileNotFoundError):
+        html_template += """
+                <h2><b>No Xss Vulns were found</b></h2>
+                """
+        html_template += """
+    <h1> </h1>
+    <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
+    """
+        return None
 
     if len(content) != 0:
         for con in content:
@@ -71,7 +79,6 @@ def xss_reporter():
     <h1> </h1>
     <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
     """
-
 
 def open_redir_reporter():
     global html_template
@@ -112,7 +119,6 @@ def open_redir_reporter():
     <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
     """
 
-
 def sqli_reporter():
     log_file = 'log'
     target_file = 'target.txt'
@@ -122,6 +128,10 @@ def sqli_reporter():
 
     if not items_in_base_folder:
         html_template += """<h3>No SQLi vulnerabilities were found.</h3>"""
+        html_template += """
+    <h1> </h1>
+    <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
+    """
         return None
 
     for item in items_in_base_folder:
@@ -137,16 +147,30 @@ def sqli_reporter():
                 with open(file_path2, 'r') as file:
                     log_file_cont = file.readlines()
 
-                dbs=[i.strip() for i in log_file_cont][:-1]
-                databases=[[dbs[-3][:-1],dbs[-2]+' '+dbs[-1]]]
+                if len(log_file_cont) < 1:
+                    html_template += """<h3>No SQLi vulnerabilities were found.</h3>"""
+                    html_template += """
+    <h1> </h1>
+    <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
+    """
+                    return None
 
-                log_details = [i.strip().split(':') for i in log_file_cont if len(i.strip().split(':')) == 2][1:-1]+databases
+                dbs = [i.strip() for i in log_file_cont][:-1]
+                databases = [[dbs[-3][:-1], dbs[-2] + ' ' + dbs[-1]]]
+
+                log_details = [i.strip().split(':') for i in log_file_cont if
+                               len(i.strip().split(':')) == 2][1:-1] + databases
                 log_title = log_file_cont[0]
                 target = target_file_cont.split(' ')[0]
 
-                html_template += f""" 
+                html_template += f"""
                 <h1><b>SQLI SCAN REPORT</b></h1>
-                <label for='target' style='font-weight: bold; font-size: 16px;'>Target: </label><input type='text' id='target' name='target' value='{target}' readonly style='width: 400px; height: 20px;'>
+                <label for='target' style='font-weight: bold; font-size: 16px;'>Target: </label><input type='text'
+                                                                                                      id='target'
+                                                                                                      name='target'
+                                                                                                      value='{target}'
+                                                                                                      readonly
+                                                                                                      style='width: 400px; height: 20px;'>
 """
                 html_template += f"""
                 <h1> </h1>
@@ -161,7 +185,6 @@ def sqli_reporter():
     <h1> </h1>
     <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
     """
-
 
 def xxeANDssrf_reporter():
     global html_template
@@ -203,7 +226,6 @@ def xxeANDssrf_reporter():
 </html>
     """
 
-
 def generate_html_report():
     xss_reporter()
     open_redir_reporter()
@@ -211,4 +233,3 @@ def generate_html_report():
     xxeANDssrf_reporter()
     with open(owasp_html_report_path, 'w') as f:
         f.write(html_template)
-    print(f'Report saved to : {owasp_html_report_path}')
