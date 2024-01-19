@@ -7,7 +7,6 @@ import sys
 import socket
 from aiohttp import ClientConnectorError, ClientOSError, ServerDisconnectedError, ServerTimeoutError, ServerConnectionError, TooManyRedirects
 from tqdm import tqdm
-import concurrent.futures
 from urllib.parse import urlparse, parse_qsl, urlencode, urlunparse
 from typing import List
 

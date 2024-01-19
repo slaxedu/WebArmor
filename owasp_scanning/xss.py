@@ -1,6 +1,5 @@
 import subprocess
 import yaml
-import sys
 from halo import Halo
 
 def scan():
