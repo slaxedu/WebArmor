@@ -23,4 +23,4 @@ def scan():
         print(f"Output saved to : {output_file_path}")
     except Exception as e:
         print(f"Error executing command '{command}': {e}")
-      
+

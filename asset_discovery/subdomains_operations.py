@@ -62,10 +62,10 @@ def subdomains_operations():
     CHAOS_KEY = config["ASSET_DISCOVERY"]["CHAOS_KEY"]
     NUCLEI_TKO_TEMPLATE = config["ASSET_DISCOVERY"]["NUCLEI_TKO_TEMPLATE"]
     WORDLIST = config["ASSET_DISCOVERY"]["BRUTEFORCE_WORDLIST"]
-    
+
     # Enumerate subdomains
     print("PASSIVE SUBDOMAINS ENUMERATION")
-    
+
     print("🔍 Enumerating subdomains using Chaos...")
     run_command(f"chaos -d {DOMAIN} -key {CHAOS_KEY} -silent -o {OUTPUT_FOLDER_PATH}/chaos.txt", text="Chaos")
 
@@ -82,7 +82,7 @@ def subdomains_operations():
     # Active Subdomains Enumeration using Gobuster
     print("🔍 Enumerating subdomains using Gobuster (Bruteforce)...")
     gobuster_output = run_command(f"gobuster dns -w {WORDLIST} -t 50 -o {OUTPUT_FOLDER_PATH}/gobuster_bruteforce_results.txt", text="Gobuster")
-    
+
     # Filtering
     print("🧹 Filtering duplicate subdomains...")
     run_command(f"cat {OUTPUT_FOLDER_PATH}/*.txt | sort -u | tee {OUTPUT_FOLDER_PATH}/all-unique-subdomains.txt", text="Filtering")
