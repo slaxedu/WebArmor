@@ -1,6 +1,6 @@
-import ast
 from datetime import datetime
 import yaml
+import json
 
 def generate_html_report():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
@@ -19,7 +19,7 @@ def generate_html_report():
     with open(info_html_temp_path, 'r') as f:
         html_template = f.read()
 
-    html_template += f"""
+    html_template += """
 <body>
   <div id="main">
     <div id="header">
@@ -65,7 +65,7 @@ def generate_html_report():
     for key, value in list(s.items())[1:]:
         html_template += f"""<h6 style='font-style:normal; font-size:60%;'><strong>{key}:</strong> {value}</h6>\n"""
 
-    html_template +=f"""<h6 style='font-style:italic; font-size:50%;'>For more info <a href={domain_info_path} style='color:blue;'>here</a></h6>\n"""
+    html_template += f"""<h6 style='font-style:italic; font-size:50%;'>For more info <a href={domain_info_path} style='color:blue;'>here</a></h6>\n"""
     html_template += """
     <h1> </h1>
     <hr style="border: 0.5px solid #6b6b6b; width: 200%;">
@@ -79,8 +79,8 @@ def generate_html_report():
         <tr>
           <th>Domain</th>
           <th>Info</th>
-        </tr>
-
+        </tr>  
+      
     """
 
     def read_data_from_file(file_path):
@@ -100,13 +100,14 @@ def generate_html_report():
         return result
 
     def format_information(info, website):
-        if info == '{}':
+        if info == '{}' or info == 'set()':
             return '<i>no-info</i>'
 
         formatted_info = ''
-        info_dict = ast.literal_eval(info)
-        for key, values in info_dict.items():
-            formatted_info += f'<b>{key}</b> : {", ".join(values)}<br>'
+        info_list = info.strip('{}').split(',')
+        info_list = [item for item in info_list]
+        for key in info_list:
+            formatted_info += f'<b>{key}</b><br>'
 
         return formatted_info
 
