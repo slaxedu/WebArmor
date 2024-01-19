@@ -5,7 +5,7 @@ import yaml
 def generate_html_report():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
-        
+
     info_html_temp_path = config['REPORT']['INFO_TEMP_PATH']
     network_html_report_path = config['REPORT']['NETWORK_PAGE_PATH']
     owasp_html_report_path = config['REPORT']['OWASP_PAGE_PATH']
@@ -79,8 +79,8 @@ def generate_html_report():
         <tr>
           <th>Domain</th>
           <th>Info</th>
-        </tr>  
-      
+        </tr>
+
     """
 
     def read_data_from_file(file_path):

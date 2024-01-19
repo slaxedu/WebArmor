@@ -85,4 +85,4 @@ def generate_html_report():
 
     with open(vulnscan_html_report_path, 'w') as file:
         file.write(html_template)
-          
+

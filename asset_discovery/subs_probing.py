@@ -13,18 +13,18 @@ def probe_subdomains(subdomains, output_file):
     for subdomain in subdomains:
         url_http = f"http://{subdomain}"
         url_https = f"https://{subdomain}"
-        
+
         try:
             # Try HTTP
             response_http = httpx.head(url_http)
             if response_http.status_code in (200, 301, 302):
                 probed_subdomains.append(url_http)
-            
+
             # Try HTTPS
             response_https = httpx.head(url_https)
             if response_https.status_code in (200, 301, 302):
                 probed_subdomains.append(url_https)
-        
+
         except httpx.RequestError:
             pass  # Ignore connection errors
 
@@ -42,7 +42,7 @@ def subs_probing():
     config_path = "/root/WebArmor/config.yaml"
     with open(config_path, "r") as config_file:
         config = yaml.safe_load(config_file)
-    
+
     SUBDOMAINS_FILE_PATH = config["ASSET_DISCOVERY"]["SUBDOMAINS_FILE_PATH"]
     OUTPUT_FOLDER_PATH = config["ASSET_DISCOVERY"]["OUTPUT_FOLDER_PATH"]
 
