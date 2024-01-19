@@ -33,7 +33,6 @@ def perform_shodan_operations(config):
 def get_ip_address(domain_name):
     try:
         ip_address = socket.gethostbyname(domain_name)
-        global shodan_file_path
         with open(shodan_file_path, 'w') as output:
         	output.write(ip_address+'\n')
     except socket.error as e:
