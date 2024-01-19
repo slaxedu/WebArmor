@@ -1,9 +1,10 @@
 import subprocess
 import sys
 import yaml
-
+from halo import Halo
 def scan():
-    print("\n[~] Scanning urls for SQL injection . . .")
+    spinner = Halo(text="Scanning urls for SQL injection . . .", spinner="dots")
+    spinner.start()
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
     output_folder = config["OWASP"]["SQLI_OUTPUT_PATH"]
@@ -29,6 +30,8 @@ def scan():
         command = f"sqlmap -m '{clean_urlsfile_path}' --dbs -f --batch --output-dir='{output_folder}' --results-file='/dev/null'"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         process.wait()
-        print(f"Output saved to : {output_folder}")
+        print(f"\nOutput saved to : {output_folder}\n")
+        spinner.stop()
     except Exception as e:
         print(f"Error while starting sqlmap: {e}")
+        
