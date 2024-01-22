@@ -23,6 +23,7 @@ CRAWLING_URL_ENUMERATION:
 VULNERABILITY_SCANNING:
   NUCLEI_OUTPUT_FOLDER_PATH: "/root/WebArmor/DATA_FOLDER/vulnerability_scanning/nuclei_result.txt"
   TEMPLATES_PATH: "/root/WebArmor/vulnerability_scanning/utils/templates/"
+  FUZZING_TEMPLATES_PATH: "/root/WebArmor/vulnerability_scanning/utils/fuzzing-templates/"
 
 
 
