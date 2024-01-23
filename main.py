@@ -13,7 +13,7 @@ from reporting import (INFO_reporter, URLS_reporter, NETWORK_reporter, OWASP_rep
 GREEN = "\033[32m"
 RED = "\033[91m"
 RESET = "\033[0m"
-PURBLE = "\033[95m"
+PURPLE = "\033[95m"
 BOLD = "\033[1m"
 
 # Function to print colored text
@@ -64,7 +64,7 @@ except Exception as e:
     print(f"{BOLD}{RED}[ERROR] YAML config may not be valid{RESET}")
     sys.exit(1)
 
-print_colored("Target", target, PURBLE)
+print_colored("Target", target, PURPLE)
 
 start = datetime.now()
 
@@ -90,6 +90,7 @@ try:
     Network_scanner.launch_scan()
 
     vulnerability_scanner.launch_scan()
+    vulnerability_scanner.start_fuzzing()
 
     xss.scan()
     open_redirect.scan()
