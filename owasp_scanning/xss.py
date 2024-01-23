@@ -34,7 +34,7 @@ def scan():
                 process.wait()
             except Exception as e:
                 print(f"Error executing command '{command}': {e}")
-        print(f"\nOutput saved to: {out}\n")
+        #print(f"\nOutput saved to: {out}\n")
         spinner.stop()
 
     except Exception as e:
