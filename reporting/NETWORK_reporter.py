@@ -22,7 +22,6 @@ def generate_html_report():
         line = line.strip()
         if line:
             key,value = line.split(':')
-            print(key)
             current_entry[key.strip()] = value.strip()
         else:
             data.append(current_entry)
