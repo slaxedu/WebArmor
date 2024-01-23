@@ -4,7 +4,7 @@ def generate_html_report():
     with open('/root/WebArmor/config.yaml', 'r') as config_file:
         config = yaml.safe_load(config_file)
 
-    network_file_path = config['ASSET_DISCOVERY']['SHODAN_FILE_PATH']
+    network_file_path = config['NETWORK_SCAN']['SCAN_RESULT_PATH']
     network_html_temp_path = config['REPORT']['NETWORK_TEMP_PATH']
     network_html_report_path = config['REPORT']['NETWORK_PAGE_PATH']
     owasp_html_report_path = config['REPORT']['OWASP_PAGE_PATH']
@@ -21,7 +21,8 @@ def generate_html_report():
     for line in lines:
         line = line.strip()
         if line:
-            key, value = line.split(':')
+            key,value = line.split(':')
+            print(key)
             current_entry[key.strip()] = value.strip()
         else:
             data.append(current_entry)
