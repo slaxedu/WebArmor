@@ -57,7 +57,7 @@ REPORT:
   OWASP_TEMP_PATH: "/root/WebArmor/reporting/utils/owasp_temp.txt"
   URLS_TEMP_PATH: "/root/WebArmor/reporting/utils/urls_temp.txt"
   VULNSCAN_TEMP_PATH: "/root/WebArmor/reporting/utils/vulnscan_temp.txt"
-  GITHUB_GIST_TOKEN:
+  GITHUB_GIST_TOKEN: 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
   
   
 
