@@ -76,4 +76,4 @@ def launch_scan():
     with open(output_path, 'w') as file:
         file.write(output_content)
 
-    print(f"Network Scan result was saved to : {output_path}\n")
+    #print(f"Network Scan result was saved to : {output_path}\n")
