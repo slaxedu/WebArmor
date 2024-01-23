@@ -32,11 +32,11 @@ existence_color = GREEN if os.path.exists(config_file_path) else RED
 def delete_text_files(directory):
     for root, dirs, files in os.walk(directory):
         for file in files:
-            if file.endswith(".txt"):
+            if file.endswith(".txt") and file != "all_urls.txt":
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)
-                    #print(f"Deleted: {file_path}")
+                    print(f"Deleted: {file_path}")
                 except Exception as e:
                     print(f"Error deleting {file_path}: {e}")
 
