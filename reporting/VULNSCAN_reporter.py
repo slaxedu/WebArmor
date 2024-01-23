@@ -66,7 +66,6 @@ def generate_html_report():
         #print(entries)
         for entry in entries:
             parts = entry.split(' ')
-            print(parts)
             issue = parts[0][1:-1]
             details = ' '.join(parts[-1])
             type_value = parts[1][1:-1] if len(parts) > 3 else ""
