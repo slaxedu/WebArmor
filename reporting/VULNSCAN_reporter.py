@@ -63,12 +63,14 @@ def generate_html_report():
         </tr>
 """
 
+        #print(entries)
         for entry in entries:
             parts = entry.split(' ')
-            issue = parts[2][1:-1]
-            details = ' '.join(parts[5:])
-            type_value = parts[3][1:-1] if len(parts) > 3 else ""
-            severity = parts[4][1:-1] if len(parts) > 3 else ""
+            print(parts)
+            issue = parts[0][1:-1]
+            details = ' '.join(parts[-1])
+            type_value = parts[1][1:-1] if len(parts) > 3 else ""
+            severity = parts[2][1:-1]
             html_template += f"""   <tr><td>{issue}</td><td>{type_value}</td><td>{severity}</td><td>{details}</td></tr>\n"""
         html_template += """</table>"""
 
@@ -85,4 +87,4 @@ def generate_html_report():
 
     with open(vulnscan_html_report_path, 'w') as file:
         file.write(html_template)
-
+generate_html_report()
