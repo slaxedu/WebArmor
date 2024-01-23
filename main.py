@@ -36,9 +36,9 @@ def delete_text_files(directory):
                 file_path = os.path.join(root, file)
                 try:
                     os.remove(file_path)
-                    print(f"Deleted: {file_path}")
+                    #print(f"Deleted: {file_path}")
                 except Exception as e:
-                    print(f"Error deleting {file_path}: {e}")
+                    #print(f"Error deleting {file_path}: {e}")
 
 delete_text_files('DATA_FOLDER/')
 
