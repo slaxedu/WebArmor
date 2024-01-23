@@ -69,19 +69,8 @@ def subdomains_operations():
     print("🔍 Enumerating subdomains using Chaos...")
     run_command(f"chaos -d {DOMAIN} -key {CHAOS_KEY} -silent -o {OUTPUT_FOLDER_PATH}/chaos.txt", text="Chaos")
 
-    print("🔍 Enumerating subdomains using Amass...")
-    run_command(f"amass enum -d {DOMAIN} -passive -o {OUTPUT_FOLDER_PATH}/amass_subs.txt", text="Amass")
-
     print("🔍 Enumerating subdomains using Subfinder...")
     run_command(f"subfinder -d {DOMAIN} -passive -o {OUTPUT_FOLDER_PATH}/subfinder-subs.txt", text="Subfinder")
-
-
-    # Active Subdomains Enumeration using PureDNS
-    print("\nACTIVE SUBDOMAINS ENUMERATION")
-
-    # Active Subdomains Enumeration using Gobuster
-    print("🔍 Enumerating subdomains using Gobuster (Bruteforce)...")
-    gobuster_output = run_command(f"gobuster dns -w {WORDLIST} -t 50 -o {OUTPUT_FOLDER_PATH}/gobuster_bruteforce_results.txt", text="Gobuster")
 
     # Filtering
     print("🧹 Filtering duplicate subdomains...")
@@ -95,7 +84,5 @@ def subdomains_operations():
     print(f"✅ All Operations Done. Results saved Successfully!")
 
 if __name__ == "__main__":
-    # Configurability: Allow specifying config file path as a command-line argument
-
     # Call the function
     subdomains_operations()
