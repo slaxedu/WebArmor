@@ -25,7 +25,7 @@ def scan():
     try:
         spinner = Halo(text="Scanning urls for xss . . .", spinner="dots")
         spinner.start()
-        for xurl in clean_urls[:2]:
+        for xurl in clean_urls[:5]:
             try:
                 out = config['OWASP']["XSS_OUTPUT_PATH"]
                 command = f"dalfox url '{xurl}' --only-poc='r,v'  -o '{out}'"
