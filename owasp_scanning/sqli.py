@@ -20,7 +20,7 @@ def scan():
         clean_urls = [key + value for key, value in uniq_params.items()]
         clean_urlsfile_path = '/root/WebArmor/owasp_scanning/utils/Sql_URLS.txt'
         with open(clean_urlsfile_path, 'w') as f:
-            for i in clean_urls[:5]:
+            for i in clean_urls[:10]:
                 f.write(i + '\n')
     except FileNotFoundError:
         print("Urls File doesn't exist")
