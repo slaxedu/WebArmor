@@ -14,7 +14,7 @@ def scan():
             urls = list({i.strip() for i in f.readlines()})
         clean_urls_path = '/root/WebArmor/owasp_scanning/utils/xxe-ssrf-clean-urls.txt'
         with open(clean_urls_path, 'w') as file:
-            for i in urls:
+            for i in urls[:10]:
                 file.write(i+'\n')
 
         command = f"nuclei -l {clean_urls_path} -t {templates_path} -o {output_file_path}"
