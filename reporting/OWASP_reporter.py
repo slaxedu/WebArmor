@@ -19,7 +19,7 @@ def xss_reporter():
     global html_template
     with open(owasp_html_temp_path, 'r') as f:
         html_template = f.read()
-    html_template += """
+    html_template += f"""
     <body>
       <div id="main">
         <div id="header">
