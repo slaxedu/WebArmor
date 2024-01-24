@@ -97,10 +97,8 @@ try:
     subs_technolgoies.subs_technologies()
     shodan_operations.shodan_operations()
 
-    #archive.fetch_archived_urls()
-    #crawler.crawl_urls()
-    print(f"\nAll archived URLs were saved\n")
-    print(f"\nAll crawled URLs were saved\n")
+    archive.fetch_archived_urls()
+    crawler.crawl_urls()
 
     Network_scanner.launch_scan()
 
